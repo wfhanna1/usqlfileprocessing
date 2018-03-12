@@ -1,0 +1,4 @@
+﻿DROP ASSEMBLY IF EXISTS USQLFileProcessingHelper;
+DROP ASSEMBLY IF EXISTS USQLApplication1;
+//CREATE ASSEMBLY USQLApplication1
+//FROM @"C:\Source\Repos\USQLApplication1\USQLApplication1\bin\Debug\USQLApplication1.dll";
