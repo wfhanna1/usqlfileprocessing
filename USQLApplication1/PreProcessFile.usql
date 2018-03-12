@@ -1,13 +1,11 @@
-﻿DECLARE @outputFilePath string = @"C:\Users\wfhan\Documents\Steinmetz\tracking_unstructured_usql_preprocessed.log";
-
-@filePath = SELECT * FROM
+﻿@filePath = SELECT * FROM
                          (VALUES
-(1, "InputFilePath", @"C:\Users\wfhan\Documents\Steinmetz\tracking_unstructured.log"))
-AS T(Id, Name, FilePath);
+(1, "File 1", @"C:\Users\wfhan\Documents\Steinmetz\tracking_unstructured.log",@"C:\Users\wfhan\Documents\Steinmetz\tracking_unstructured_usql_preprocessed.log"))
+AS T(Id, Name, InputFilePath,OutPutFilePath);
 
 
 @result =
-    SELECT Id, Name, USQLApplication1.Script.Start(FilePath, @outputFilePath) AS myFirstFunction_AR
+    SELECT Id, Name, USQLApplication1.Script.Start(InputFilePath, OutPutFilePath) AS success_code
     FROM @filePath;
 
 
